@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+  $color: (
+    black: #000,
+    green: #38b93e,
+    red: #db261d,
+    white: #fff
+
+    );
+.container {
+  width: 1240px;
+  margin: 0 auto;
+}
+.clear {
+  clear: both;
+  }
+.information {
+  float: left;
+  width: 420px;
+  height: 55px;
+  .nav {
+    margin: 0;
+    padding: 0;
+  }
+  .nav-item {
+    display: inline-block;
+    padding: 0 10px;
+    list-style-type: none;
+    a {
+      text-decoration: none;
+      font-size: 12px;
+    }
+  }
+}
+.searching {
+  float: right;
+  // width: 440px;
+  height: 55px;
+}
+
+.logo {
+  float: left;
+  width: 146px;
+  height: 73px;
+}
+.home-nav {
+  float: left;
+  width: 800px;
+  height: 73px;
+  .navgation {
+    margin: 0;
+    padding: 0;
+  }
+  .navgation-item {
+    display: inline-block;
+    padding: 0 10px;
+    list-style-type: none;
+  }
+  a{
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    color: map-get($color, black);
+    text-transform: uppercase;
+  }
+  .sup-green {
+    background-color: map-get($color, green);
+    color: map-get($color, white);
+  }
+  .sup-red {
+    background-color: map-get($color, red);
+    color: map-get($color, white);
+  }
+}
+.shopping {
+  float: right;
+  width: 105px;
+  height: 73px;
+}
+
+// banner
+.banner {
+   background-color: map-get($color, green);
+   height: 450px;
+}
+.banner-content-left {
+  float:left;
+  width: 550px;
+  color: map-get($color, white);
+  h2 {
+    font-size: 40px;
+    text-transform: uppercase;
+    padding: 42px 0px 20px;
+  }
+  h4 {
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 0px 37px 20px;
+  }
+  p {
+    font-size: 13px;
+     padding: 0px 17px 20px;
+  }
+}
+.banner-content-right {
+  float:right;
+  width: 688px;
+}
