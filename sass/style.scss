@@ -6,12 +6,16 @@
     black: #000,
     green: #38b93e,
     red: #db261d,
-    white: #fff
+    white: #fff,
+    nau: #ebebeb
 
     );
 .container {
   width: 1240px;
   margin: 0 auto;
+  .tour {
+    padding-top: 30px;
+  }    
 }
 .clear {
   clear: both;
@@ -107,4 +111,115 @@
 .banner-content-right {
   float:right;
   width: 688px;
+  color:red;
+}
+/*category*/
+.background-1 {
+  background: url('../images/hang_1.png');
+  background-repeat: no-repeat;
+  width: 295px;
+  height: 205px;
+  float: left;
+  padding: 0 54px;
+  position: relative;
+  margin-left: 10px;
+  margin-bottom: 31px;
+}
+.background-2 {
+  background: url('../images/hang_2.png');
+  background-repeat: no-repeat;
+  width: 295px;
+  height: 205px;
+  float: left;
+  padding: 0 54px;
+  position: relative;
+  margin-left: 10px;
+  margin-bottom: 31px;
+}
+.background-3 {
+  background: url('../images/hang_3.png');
+  background-repeat: no-repeat;
+  width: 295px;
+  height: 205px;
+  float: left;
+  padding: 0 54px;
+  position: relative;
+  margin-left: 10px;
+  margin-bottom: 31px;
+}
+.transbox {
+  background-color: rgba(59,49,45, 0.5);
+  height: 205px;
+  width: 400px;
+  margin-left: -54px;
+  cursor: pointer;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  transition-property: background;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+  h3 {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 82px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+    font-family: MyriadPro;
+  }
+}
+.transbox:hover {
+  background-color: rgba(65,196,231, 0.5);
+}
+/*nav-list*/
+.list-hang {
+  display: block;
+  text-align: center;
+  padding-bottom: 25px;
+}
+.nav-list {
+  margin: 0;
+  padding: 0;
+  .list-item:first-child {
+    background-color: map-get($color, green);
+    padding: 10px 24px 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  .list-item {
+    display: inline-block;
+    padding: 0 10px;
+    list-style-type: none;
+    border: 1px solid #ebebeb;
+    padding: 10px 24px 10px;
+    margin: 0 6px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  a {
+    text-decoration: none;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: map-get($color, black);
+  }
+}
+
+/*gellary*/
+.gellary {
+  width: 100%;
+  padding: 12px 0;
+  .gellary-img {
+    margin: 0 9px;
+    float: left;
+    width: 188px;
+    height: 113px;
+  }
 }
