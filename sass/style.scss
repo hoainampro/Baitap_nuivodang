@@ -2,20 +2,37 @@
   margin: 0;
   padding: 0;
 }
-  $color: (
-    black: #000,
-    green: #38b93e,
-    red: #db261d,
-    white: #fff,
-    nau: #ebebeb
+$color: (
+  black: #000,
+  green: #38b93e,
+  red: #db261d,
+  white: #fff,
+  purple: #25105b,
+  yellow: #fdb813,
+  bgr: #f6f6f6,
+  fa: #fafafa
+  );
+body {
+  background-color: map-get($color, bgr);
+}
+header {
+  background-color: map-get($color, white);
+}
 
-    );
+@mixin radius {
+  border-radius: 5px 5px 5px 5px;
+}
+@mixin shadow {
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(2, 3, 3, 1);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(2, 3, 3, 1);
+  box-shadow: 0px 2px 2px 0px rgba(2, 3, 3, 0.12);
+}
 .container {
   width: 1240px;
   margin: 0 auto;
   .tour {
     padding-top: 30px;
-  }    
+  }
 }
 .clear {
   clear: both;
@@ -40,10 +57,53 @@
 }
 .searching {
   float: right;
-  // width: 440px;
+  width: 470px;
   height: 55px;
-}
+  position: relative;
+  .button-search {
+    margin: 10px 0;
+    width: 15%;
+    height: 40px;
+    background-image: url(../images/button_search.png);
+    background-repeat: no-repeat;
+    background-position: right 14px bottom 9px;
+    border: none;
+    background-color: map-get($color, fa);
+  }
+  .input-search {
+    width: 56%;
+    height: 36px;
+    font-size: 15px;
+    font-family: inherit;
+    letter-spacing: 1px;
+    text-indent: 5%;
+    margin-left: -4px;
+    position: absolute;
+    top: 10px;
+    background-color: map-get($color, fa);
+  }
+  .button-login {
+    width: 23%;
+    height: 37px;
+    font-size: 15px;
+    font-family: inherit;
+    letter-spacing: 1px;
+    text-indent: 5%;
+    margin-left: -4px;
+    position: absolute;
+    top: 10px;
+    left: 357px;
+    border: none;
+    background-color: map-get($color, white);
+  }
 
+}
+ .button-login::before {
+    content: url('../images/fa_user.png');
+  }
+ .button-login::after {
+    content: url('../images/button_ten.png');
+  }
 .logo {
   float: left;
   width: 146px;
@@ -187,10 +247,7 @@
   .list-item:first-child {
     background-color: map-get($color, green);
     padding: 10px 24px 10px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    @include radius;
   }
   .list-item {
     display: inline-block;
@@ -199,10 +256,7 @@
     border: 1px solid #ebebeb;
     padding: 10px 24px 10px;
     margin: 0 6px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    @include radius;
   }
   a {
     text-decoration: none;
@@ -215,11 +269,273 @@
 /*gellary*/
 .gellary {
   width: 100%;
-  padding: 12px 0;
+  padding: 20px 0;
   .gellary-img {
-    margin: 0 9px;
+    margin: 0 8px;
     float: left;
-    width: 188px;
-    height: 113px;
+    width: 190px;
+    height: 265px;
+    @include shadow;
+  }
+  h6 {
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 10px;
+  }
+  p, a{
+    text-align: center;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: map-get($color, purple);
+  }
+  button {
+    width: 167px;
+    height: 37px;
+    background-color: map-get($color, red);
+    border: none;
+    @include radius;
+    margin: 18px 10px;
+  }
+  i {
+    font-size: 14px;
+    color: map-get($color, white);
+    text-transform: uppercase;
+  }
+  i:before {
+    padding: 0 10px;
   }
 }
+
+/*slide*/
+.slide {
+  height: 231px;
+  background-color: gray;
+  margin: 37px 0 50px;
+  background-image: url(../images/slide.png);
+  background-repeat: no-repeat;
+  .customer {
+    font-size: 24px;
+    text-align: center;
+    color: map-get($color, white);
+    text-transform: uppercase;
+    padding: 36px 0 24px;
+  }
+  .slide-desc {
+    text-align: center;
+    color: map-get($color, white);
+    font-size: 13px;
+    position: relative;
+  }
+  .pagi-desc {
+    text-align: center;
+    padding: 36px;
+  }
+  .slide-desc::before {
+    content: url('../images/slide_before.png');
+    width: 40px;
+    height: 25px;
+    position: absolute;
+    left: 317px;
+    top: -14px;
+  }
+  .slide-desc::after {
+    content: url('../images/slide_after.png');
+    width: 40px;
+    height: 25px;
+    position: absolute;
+    top: 48px;
+    right: 486px;
+    }
+}
+/*event*/
+.promotion {
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0 0 45px;
+}
+.event {
+  height: 306px;
+  margin-bottom: 62px;
+  position: relative;
+  .event-left {
+    width: 612px;
+    float: left;
+    display: inline-block;
+    .gallary {
+      width: 100%;
+    }
+    .galary-event-img {
+      float: left;
+      width: 306px;
+      height: 307px;
+    }
+    .galary-event-desc {
+      float: left;
+      width: 306px;
+      height: 307px;
+      color: map-get($color, black);
+      background-color: map-get($color, white);
+      h3 {
+        text-transform: uppercase;
+        font-size: 16px;
+        padding: 43px 16px;
+        font-weight: bold;
+      }
+      p {
+        padding: 0px 16px;
+        font-size: 16px;
+        line-height: 1.2;
+      }
+      a {
+         padding: 0px 16px;
+      }
+    }
+    .galary-event-desc::before {
+      content: '';
+      position: absolute;
+      top: 49%;
+      left: 24%;
+      margin-left: -11px;
+      width: 0;
+      height: 0;
+      border-bottom: 20px solid transparent;
+      border-top: 20px solid transparent;
+      border-right: 20px solid #fff;
+    }
+  }
+  .event-right {
+    width: 612px;
+    float: right;
+    display: inline-block;
+    .gallary {
+      width: 100%;
+      position: relative;
+    }
+    .galary-event-img {
+      float: left;
+      width: 306px;
+      height: 307px;
+    }
+    .galary-event-desc {
+      float: left;
+      width: 306px;
+      height: 307px;
+      color: map-get($color, black);
+      background-color: map-get($color, white);
+      h3 {
+        text-transform: uppercase;
+        font-size: 16px;
+        padding: 43px 16px;
+        font-weight: bold;
+      }
+      p {
+        padding: 0px 16px;
+        font-size: 16px;
+        line-height: 1.2;
+      }
+      a {
+         padding: 0px 16px;
+      }
+    }
+     .galary-event-desc::after {
+      content: '';
+      position: absolute;
+      bottom: 2;
+      left: 48%;
+      margin-left: -8px;
+      margin-top: -65px;
+      width: 0;
+      height: 0;
+      border-bottom: 20px solid transparent;
+      border-top: 20px solid transparent;
+      border-right: 20px solid #fff;
+    }
+  }
+}
+
+/*slide*/
+.footer-last {
+  background-color: map-get($color, green);
+  height: 185px;
+}
+
+.footer-gallary {
+  width: 100%;
+  display: inline-block;
+  border-bottom: 1px solid #60c765;
+  padding: 0 0 31px;
+}
+.footer-text {
+  float: left;
+  width: 615px;
+  p {
+    font-size: 24px;
+    font-weight: bold;
+    color: map-get($color, white);
+    padding: 50px 0 0;
+  }
+}
+.footer-button {
+  float: right;
+  width: 615px;
+
+.input {
+  display:flex;
+  align-items: center;
+  padding: 35px 0 0;
+}
+.button {
+  height: 44px;
+  border: none;
+}
+.email {
+  width: 83%;
+  font-size: 15px;
+  font-family: inherit;
+  letter-spacing: 1px;
+  text-indent: 5%;
+  border:1px solid #e5e5e5;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.submit {
+  width: 17%;
+  height: 46px;
+  background: map-get($color, yellow);
+  font-family: inherit;
+  font-weight: bold;
+  color: inherit;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background-image: url('../images/email.png');
+  background-repeat: no-repeat;
+  background-position: right 38px bottom 13px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+}
+
+.last p{
+  text-align: left;
+  font-size: 13px;
+  float: left;
+  padding: 28px 0;
+}
+.nav-last {
+  margin: 0;
+  padding: 0;
+  float: right;
+  padding: 28px 0;
+  .nav-list-item {
+  display: inline-block;
+  text-decoration: none;
+  list-style: none;
+  padding: 0 1px;
+}
+}
+
+
+
