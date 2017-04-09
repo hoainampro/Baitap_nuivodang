@@ -10,13 +10,19 @@ $color: (
   purple: #25105b,
   yellow: #fdb813,
   bgr: #f6f6f6,
-  fa: #fafafa
+  fa: #fafafa,
   );
 body {
   background-color: map-get($color, bgr);
 }
 header {
   background-color: map-get($color, white);
+}
+
+@font-face {
+  font-family: MyriadPro;
+  font-family: Arial, Helvetica, sans-serif;
+  src: url('../font/MyriadPro-Regular.woff');
 }
 
 @mixin radius {
@@ -37,10 +43,13 @@ header {
 .clear {
   clear: both;
   }
-.information {
-  float: left;
-  width: 420px;
-  height: 55px;
+ .infor-border {
+   border-bottom: 1px solid #eaeaea;
+  .information {
+    float: left;
+    width: 420px;
+    height: 55px;
+    padding: 15px 0 0;
   .nav {
     margin: 0;
     padding: 0;
@@ -52,9 +61,11 @@ header {
     a {
       text-decoration: none;
       font-size: 12px;
+      font-family: Arial, Helvetica, sans-serif;
     }
   }
-}
+ }
+
 .searching {
   float: right;
   width: 470px;
@@ -69,10 +80,11 @@ header {
     background-position: right 14px bottom 9px;
     border: none;
     background-color: map-get($color, fa);
+    outline: none;
   }
   .input-search {
     width: 56%;
-    height: 36px;
+    height: 39px;
     font-size: 15px;
     font-family: inherit;
     letter-spacing: 1px;
@@ -81,6 +93,10 @@ header {
     position: absolute;
     top: 10px;
     background-color: map-get($color, fa);
+    outline: none;
+    border: none;
+    border-left: 1px solid #e8e8e8;
+    font-family: Arial, Helvetica, sans-serif;
   }
   .button-login {
     width: 23%;
@@ -88,31 +104,35 @@ header {
     font-size: 15px;
     font-family: inherit;
     letter-spacing: 1px;
-    text-indent: 5%;
     margin-left: -4px;
     position: absolute;
     top: 10px;
     left: 357px;
     border: none;
     background-color: map-get($color, white);
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
   }
-
-}
- .button-login::before {
+  }
+  .button-login::before {
     content: url('../images/fa_user.png');
   }
  .button-login::after {
     content: url('../images/button_ten.png');
-  }
-.logo {
+  } 
+} 
+
+.header-content {
+  margin: 13px 0 0;
+  .logo {
   float: left;
   width: 146px;
   height: 73px;
-}
-.home-nav {
+ }
+ .home-nav {
   float: left;
   width: 800px;
-  height: 73px;
+  margin: 15px 0;
   .navgation {
     margin: 0;
     padding: 0;
@@ -128,6 +148,7 @@ header {
     font-weight: bold;
     color: map-get($color, black);
     text-transform: uppercase;
+    font-family: Arial;
   }
   .sup-green {
     background-color: map-get($color, green);
@@ -142,36 +163,67 @@ header {
   float: right;
   width: 105px;
   height: 73px;
-}
+  i {
+    border: 1px solid #f6f6f6;
+    width: 34px;
+    height: 34px;
+    text-align: center;
+    border-radius: 50%;
+    vertical-align: middle;
+    background-color: map-get($color, bgr);
+    color: map-get($color, black);
+    margin: 0 18px;
+    font-weight: bold;
+  span {
+    font-weight: bold;
+    }
+  }
+ .fa-shopping-cart:before {
+    content: "\f07a";
+    display: block;
+    margin: 7px;
+  } 
+ }
+}  
 
-// banner
+/*class banner*/
 .banner {
    background-color: map-get($color, green);
-   height: 450px;
+   height: 439px;
 }
 .banner-content-left {
   float:left;
-  width: 550px;
+  width: 610px;
   color: map-get($color, white);
+  box-sizing: border-box;
+  display: block;
+  text-align: center;
   h2 {
-    font-size: 40px;
+    font-size: 48px;
     text-transform: uppercase;
-    padding: 42px 0px 20px;
+    padding: 42px 30px 20px;
+    font-family: MyriadPro;
   }
   h4 {
     font-size: 18px;
     text-transform: uppercase;
-    padding: 0px 37px 20px;
+    padding: 0px 65px 20px;
+    font-family: MyriadPro;
   }
   p {
     font-size: 13px;
-     padding: 0px 17px 20px;
+     padding: 0px 122px 20px;
+     font-family: Arial;
   }
 }
 .banner-content-right {
   float:right;
-  width: 688px;
-  color:red;
+  width: 600px;
+  box-sizing: border-box;
+  img {
+    width: 100%;
+    height: 436px;
+  }
 }
 /*category*/
 .background-1 {
@@ -233,8 +285,10 @@ header {
   }
 }
 .transbox:hover {
-  background-color: rgba(65,196,231, 0.5);
+  background-color: rgba(18,5,5, 0.5);
 }
+
+
 /*nav-list*/
 .list-hang {
   display: block;
@@ -263,6 +317,7 @@ header {
     font-size: 12px;
     text-transform: uppercase;
     color: map-get($color, black);
+    font-family: Arial;
   }
 }
 
@@ -270,6 +325,7 @@ header {
 .gellary {
   width: 100%;
   padding: 20px 0;
+  box-sizing: border-box;
   .gellary-img {
     margin: 0 8px;
     float: left;
@@ -282,6 +338,7 @@ header {
     font-size: 14px;
     font-weight: bold;
     padding: 8px 10px;
+    font-family: Arial;
   }
   p, a{
     text-align: center;
@@ -289,6 +346,7 @@ header {
     font-size: 24px;
     font-weight: bold;
     color: map-get($color, purple);
+    font-family: Arial;
   }
   button {
     width: 167px;
@@ -297,6 +355,7 @@ header {
     border: none;
     @include radius;
     margin: 18px 10px;
+    outline: none;
   }
   i {
     font-size: 14px;
@@ -305,6 +364,9 @@ header {
   }
   i:before {
     padding: 0 10px;
+  }
+  span {
+    font-family: Arial;
   }
 }
 
@@ -315,18 +377,21 @@ header {
   margin: 37px 0 50px;
   background-image: url(../images/slide.png);
   background-repeat: no-repeat;
+  box-sizing: border-box;
   .customer {
     font-size: 24px;
     text-align: center;
     color: map-get($color, white);
     text-transform: uppercase;
     padding: 36px 0 24px;
+    font-family: Arial;
   }
   .slide-desc {
     text-align: center;
     color: map-get($color, white);
     font-size: 13px;
     position: relative;
+    font-family: Arial;
   }
   .pagi-desc {
     text-align: center;
@@ -337,7 +402,7 @@ header {
     width: 40px;
     height: 25px;
     position: absolute;
-    left: 317px;
+    left: 298px;
     top: -14px;
   }
   .slide-desc::after {
@@ -355,11 +420,13 @@ header {
   font-weight: bold;
   text-transform: uppercase;
   padding: 0 0 45px;
+  font-family: Arial;
 }
 .event {
   height: 306px;
   margin-bottom: 62px;
   position: relative;
+  box-sizing: border-box;
   .event-left {
     width: 612px;
     float: left;
@@ -378,6 +445,7 @@ header {
       height: 307px;
       color: map-get($color, black);
       background-color: map-get($color, white);
+      font-family: Arial;
       h3 {
         text-transform: uppercase;
         font-size: 16px;
@@ -385,12 +453,15 @@ header {
         font-weight: bold;
       }
       p {
-        padding: 0px 16px;
-        font-size: 16px;
+        padding: 0px 15px;
+        font-size: 14px;
         line-height: 1.2;
       }
       a {
          padding: 0px 16px;
+      }
+      img {
+         margin: 17px 0;
       }
     }
     .galary-event-desc::before {
@@ -425,6 +496,7 @@ header {
       height: 307px;
       color: map-get($color, black);
       background-color: map-get($color, white);
+      font-family: Arial;
       h3 {
         text-transform: uppercase;
         font-size: 16px;
@@ -432,12 +504,15 @@ header {
         font-weight: bold;
       }
       p {
-        padding: 0px 16px;
-        font-size: 16px;
+        padding: 0px 15px;
+        font-size: 14px;
         line-height: 1.2;
       }
       a {
          padding: 0px 16px;
+      }
+      img {
+         margin: 17px 0;
       }
     }
      .galary-event-desc::after {
@@ -460,82 +535,86 @@ header {
 .footer-last {
   background-color: map-get($color, green);
   height: 185px;
-}
-
-.footer-gallary {
-  width: 100%;
-  display: inline-block;
-  border-bottom: 1px solid #60c765;
-  padding: 0 0 31px;
-}
-.footer-text {
-  float: left;
-  width: 615px;
-  p {
-    font-size: 24px;
-    font-weight: bold;
-    color: map-get($color, white);
-    padding: 50px 0 0;
+  box-sizing: border-box;
+  .footer-gallary {
+    width: 100%;
+    display: inline-block;
+    border-bottom: 1px solid #60c765;
+    padding: 0 0 31px;
   }
-}
-.footer-button {
-  float: right;
-  width: 615px;
+  .footer-text {
+    float: left;
+    width: 617px;
+    p {
+      font-size: 24px;
+      font-weight: bold;
+      color: map-get($color, white);
+      padding: 50px 0 0;
+      font-family: Arial;
+    }
+  }
+  .footer-button {
+    float: right;
+    width: 615px;
 
-.input {
-  display:flex;
-  align-items: center;
-  padding: 35px 0 0;
-}
-.button {
-  height: 44px;
-  border: none;
-}
-.email {
-  width: 83%;
-  font-size: 15px;
-  font-family: inherit;
-  letter-spacing: 1px;
-  text-indent: 5%;
-  border:1px solid #e5e5e5;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
-.submit {
-  width: 17%;
-  height: 46px;
-  background: map-get($color, yellow);
-  font-family: inherit;
-  font-weight: bold;
-  color: inherit;
-  letter-spacing: 1px;
-  cursor: pointer;
-  background-image: url('../images/email.png');
-  background-repeat: no-repeat;
-  background-position: right 38px bottom 13px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-}
-
-.last p{
-  text-align: left;
-  font-size: 13px;
-  float: left;
-  padding: 28px 0;
-}
-.nav-last {
-  margin: 0;
-  padding: 0;
-  float: right;
-  padding: 28px 0;
-  .nav-list-item {
-  display: inline-block;
-  text-decoration: none;
-  list-style: none;
-  padding: 0 1px;
-}
-}
+  .input {
+    display:flex;
+    align-items: center;
+    padding: 35px 27px 0;
+    margin-right: -23px;
+  }
+  .button {
+    height: 44px;
+    border: none;
+  }
+  .email {
+    width: 83%;
+    font-size: 15px;
+    font-family: inherit;
+    letter-spacing: 1px;
+    text-indent: 5%;
+    border:1px solid #e5e5e5;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    outline: none;
+  }
+  .submit {
+    width: 17%;
+    height: 46px;
+    background: map-get($color, yellow);
+    font-family: inherit;
+    font-weight: bold;
+    color: inherit;
+    letter-spacing: 1px;
+    cursor: pointer;
+    background-image: url('../images/email.png');
+    background-repeat: no-repeat;
+    background-position: right 38px bottom 13px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    outline: none;
+    }
+  }
+  .last p{
+    text-align: left;
+    font-size: 13px;
+    float: left;
+    padding: 28px 0;
+    font-family: Arial;
+  }
+  .nav-last {
+    margin: 0;
+    padding: 0;
+    float: right;
+    padding: 28px 0;
+    .nav-list-item {
+    display: inline-block;
+    text-decoration: none;
+    list-style: none;
+    padding: 0 1px;
+  }
+ }
+} 
 
 
 
