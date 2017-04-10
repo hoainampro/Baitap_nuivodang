@@ -1,70 +1,5 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-$color: (
-  black: #000,
-  green: #38b93e,
-  red: #db261d,
-  white: #fff,
-  purple: #25105b,
-  yellow: #fdb813,
-  bgr: #f6f6f6,
-  fa: #fafafa,
-  login: #a3a3a3,
-  infor: #969696,
-  pink: #f078f4,
-  blue: #35558e
-  );
-body {
-  background-color: map-get($color, bgr);
-}
-header {
-  background-color: map-get($color, white);
-}
-
-@font-face {
-  font-family: MyriadPro;
-  font-family: Arial, Helvetica, sans-serif;
-  src: url('../font/MyriadPro-Regular.woff');
-}
-
-@mixin radius {
-  border-radius: 3px 3px 3px 3px;
-}
-@mixin shadow {
-  -webkit-box-shadow: 0px 2px 5px 0px rgba(2, 3, 3, 1);
-  -moz-box-shadow: 0px 2px 5px 0px rgba(2, 3, 3, 1);
-  box-shadow: 0px 2px 2px 0px rgba(2, 3, 3, 0.12);
-}
-
-@mixin hover {
-   img:hover {
-    opacity: 1;
-    -webkit-animation: flash 1.5s;
-    animation: flash 1.5s;
-    }
-    @-webkit-keyframes flash {
-        0% {
-            opacity: .4;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
-    @keyframes flash {
-        0% {
-            opacity: .4;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
-}
-.container {
-  width: 1240px;
-  margin: 0 auto;
-}
+@import 'mixin';
+@import 'global';
 .clear {
   clear: both;
   }
@@ -76,7 +11,7 @@ header {
     height: 55px;
     padding: 15px 0 0;
   .nav {
-    margin: 0 -7px;
+    margin: 10px -7px;
     padding: 0;
   }
   .nav-item {
@@ -86,12 +21,10 @@ header {
     a {
       text-decoration: none;
       font-size: 12px;
-      font-family: Arial, Helvetica, sans-serif;
       color: map-get($color, infor);
     }
   }
  }
-
 .searching {
   float: right;
   width: 470px;
@@ -123,7 +56,6 @@ header {
     outline: none;
     border: none;
     border-left: 1px solid #e8e8e8;
-    font-family: Arial, Helvetica, sans-serif;
     color: map-get($color, login);
   }
   .button-login {
@@ -139,7 +71,6 @@ header {
     border: none;
     background-color: map-get($color, white);
     outline: none;
-    font-family: Arial, Helvetica, sans-serif;
     color: map-get($color, login);
     cursor: pointer;
    }
@@ -155,7 +86,6 @@ header {
     right: -5px;
   }
 }
-
 .header-content {
   margin: 13px 0 0;
   .logo {
@@ -177,13 +107,12 @@ header {
     list-style-type: none;
     position: relative;
   }
-  a{
+  a {
     text-decoration: none;
     font-size: 12px;
     font-weight: bold;
     color: map-get($color, black);
     text-transform: uppercase;
-    font-family: Arial;
     &:hover {
       color: map-get($color, green);
     }
@@ -204,7 +133,7 @@ header {
     top: -15px;
     right: -4px;
     padding: 2px 3px;
-    border-radius: 3px 3px 3px 3px
+    border-radius: 3px;
   }
 }
 .shopping {
@@ -233,7 +162,6 @@ header {
   }
  }
 }
-
 /*class banner*/
 .banner {
    background-color: map-get($color, green);
@@ -245,22 +173,31 @@ header {
   color: map-get($color, white);
   box-sizing: border-box;
   text-align: center;
+  position: absolute;
   h2 {
-    font-size: 51px;
+    font-size: 42px;
     text-transform: uppercase;
     padding: 95px 30px 35px;
-    font-family: MyriadPro;
   }
   h4 {
     font-size: 18px;
     text-transform: uppercase;
     padding: 0px 65px 20px;
-    font-family: MyriadPro;
   }
   p {
     font-size: 13px;
      padding: 0px 122px 20px;
-     font-family: Arial;
+     line-height: 18px;
+  }
+  a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    background: map-get($color, white);
+    border-radius: 50%;
+    text-decoration: none;
+    color: #000;
   }
 }
 .banner-content-right {
@@ -268,8 +205,8 @@ header {
   width: 600px;
   box-sizing: border-box;
   img {
-    width: 100%;
-    height: 436px;
+    height: 438px;
+    margin-left: -89px;
   }
 }
 /*category*/
@@ -277,7 +214,7 @@ header {
     padding-top: 30px;
     box-sizing: border-box;
   .background-1 {
-    background: url('../images/hang_1.png');
+    background: url('../images/products/hang_1.png');
     background-repeat: no-repeat;
     width: 295px;
     height: 205px;
@@ -288,7 +225,7 @@ header {
     margin-bottom: 31px;
   }
   .background-2 {
-    background: url('../images/hang_2.png');
+    background: url('../images/products/hang_2.png');
     background-repeat: no-repeat;
     width: 295px;
     height: 205px;
@@ -299,7 +236,7 @@ header {
     margin-bottom: 31px;
   }
   .background-3 {
-    background: url('../images/hang_3.png');
+    background: url('../images/products/hang_3.png');
     background-repeat: no-repeat;
     width: 295px;
     height: 205px;
@@ -315,10 +252,7 @@ header {
     width: 400px;
     margin-left: -54px;
     cursor: pointer;
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px;
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px;
+    border-radius: 2px;
     transition-property: background;
     transition-duration: 1s;
     transition-timing-function: linear;
@@ -331,7 +265,7 @@ header {
       text-align: center;
       color: #fff;
       font-size: 30px;
-      font-family: MyriadPro;
+      font-family: 'FontAurora';
     }
   }
   .transbox:hover {
@@ -369,7 +303,6 @@ header {
     font-size: 12px;
     text-transform: uppercase;
     color: map-get($color, black);
-    font-family: Arial;
   }
 }
 /*gellary*/
@@ -391,19 +324,17 @@ header {
     font-size: 14px;
     font-weight: bold;
     padding: 8px 10px;
-    font-family: Arial;
     cursor: pointer;
     &:hover {
       color: map-get($color, green);
     }
   }
-  p, a{
+  p, a {
     text-align: center;
     text-decoration: none;
     font-size: 24px;
     font-weight: bold;
     color: map-get($color, purple);
-    font-family: Arial;
   }
   button {
     width: 167px;
@@ -433,46 +364,47 @@ header {
 /*slide*/
 .slide {
   height: 231px;
-  background-color: gray;
   margin: 37px 0 50px;
-  background-image: url(../images/slide.png);
-  background-repeat: no-repeat;
+  background: gray url(../images/slide/slide.png) no-repeat;
   box-sizing: border-box;
+  text-align: center;
   .customer {
     font-size: 24px;
     text-align: center;
     color: map-get($color, white);
     text-transform: uppercase;
     padding: 36px 0 24px;
-    font-family: Arial;
   }
   .slide-desc {
     text-align: center;
-    color: map-get($color, white);
+    color: #fff;
     font-size: 13px;
-    position: relative;
-    font-family: Arial;
+    display: inline-block;
+    vertical-align: top;
+    margin: auto;
+    line-height: 18px;
   }
   .pagi-desc {
     text-align: center;
-    padding: 36px;
+    label {
+      background-color: map-get($color, white);
+      padding: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
   }
   .slide-desc::before {
-    content: url('../images/slide_before.png');
+    content: url('../images/slide/slide_before.png');
     width: 40px;
     height: 25px;
-    position: absolute;
-    left: 298px;
-    top: -14px;
+    padding-right: 20px;
   }
   .slide-desc::after {
-    content: url('../images/slide_after.png');
-    width: 40px;
-    height: 25px;
-    position: absolute;
-    top: 48px;
-    right: 486px;
-    }
+    content: url('../images/slide/slide_after.png');
+    vertical-align: inherit;
+    display: inline-block;
+    margin: 3px 13px;
+  }
 }
 /*event*/
 .promotion {
@@ -506,25 +438,31 @@ header {
       height: 307px;
       color: map-get($color, black);
       background-color: map-get($color, white);
-      font-family: Arial;
       h3 {
         text-transform: uppercase;
         font-size: 16px;
         padding: 43px 16px;
         font-weight: bold;
+        font-family: Arial;
       }
       p {
         padding: 0px 15px;
         font-size: 14px;
-        line-height: 1.2;
+        line-height: 18px;
       }
       a {
-         padding: 0px 16px;
+        width: 22px;
+        display: inline-block;
+        height: 22px;
+        line-height: 22px;
+        text-align: center;
+        background-color: map-get($color, yellow);
+        border-radius: 50%;
+        text-decoration: none;
+        color: map-get($color, white);
+        margin: 10px 12px;
+        }
       }
-      img {
-         margin: 17px 0;
-      }
-    }
     .galary-event-desc::before {
       content: '';
       position: absolute;
@@ -535,7 +473,7 @@ header {
       height: 0;
       border-bottom: 20px solid transparent;
       border-top: 20px solid transparent;
-      border-right: 20px solid #fff;
+      border-right: 20px solid map-get($color, white);
     }
   }
   .event-right {
@@ -558,23 +496,29 @@ header {
       height: 307px;
       color: map-get($color, black);
       background-color: map-get($color, white);
-      font-family: Arial;
       h3 {
         text-transform: uppercase;
         font-size: 16px;
         padding: 43px 16px;
         font-weight: bold;
+        font-family: Arial;
       }
       p {
         padding: 0px 15px;
         font-size: 14px;
-        line-height: 1.2;
+        line-height: 18px;
       }
       a {
-         padding: 0px 16px;
-      }
-      img {
-         margin: 17px 0;
+        width: 22px;
+        display: inline-block;
+        height: 22px;
+        line-height: 22px;
+        text-align: center;
+        background-color: map-get($color, yellow);
+        border-radius: 50%;
+        text-decoration: none;
+        color: map-get($color, white);
+        margin: 10px 12px;
       }
     }
      .galary-event-desc::after {
@@ -611,13 +555,11 @@ header {
       font-weight: bold;
       color: map-get($color, white);
       padding: 50px 0 0;
-      font-family: Arial;
     }
   }
   .footer-button {
     float: right;
     width: 615px;
-
   .input {
     display:flex;
     align-items: center;
@@ -656,7 +598,7 @@ header {
     outline: none;
     }
   }
-  .last p{
+  .last p {
     text-align: left;
     font-size: 13px;
     float: left;
@@ -667,7 +609,7 @@ header {
     margin: 0;
     padding: 0;
     float: right;
-    padding: 28px 0;
+    padding: 21px 0;
     .nav-list-item {
     display: inline-block;
     text-decoration: none;
@@ -693,6 +635,3 @@ header {
   }
  }
 }
-
-
-

@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: MyriadPro;
+}
+$color: (
+  black: #000,
+  green: #38b93e,
+  red: #db261d,
+  white: #fff,
+  purple: #25105b,
+  yellow: #fdb813,
+  bgr: #f6f6f6,
+  fa: #fafafa,
+  login: #a3a3a3,
+  infor: #969696,
+  pink: #f078f4,
+  blue: #35558e
+  );
+body {
+  background-color: map-get($color, bgr);
+  font-family: Arial;
+}
+header {
+  background-color: map-get($color, white);
+}
+@font-face {
+  font-family: 'FontAurora';
+  src: url('../font/UTMAurora-1.ttf');
+}
+.container {
+  width: 1240px;
+  margin: 0 auto;
+}
