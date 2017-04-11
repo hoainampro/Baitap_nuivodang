@@ -3,7 +3,7 @@
   padding: 0;
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: MyriadPro;
+  font-family: 'FontAurora';
 }
 $color: (
   black: #000,
@@ -17,7 +17,9 @@ $color: (
   login: #a3a3a3,
   infor: #969696,
   pink: #f078f4,
-  blue: #35558e
+  blue: #35558e,
+  gray: #eaeaea,
+  gray_n: #e8e8e8
   );
 body {
   background-color: map-get($color, bgr);
@@ -25,6 +27,14 @@ body {
 }
 header {
   background-color: map-get($color, white);
+}
+@font-face {
+  font-family: 'MyriadPro';
+  src: url('../font/MyriadPro-Regular.woff');
+}
+@font-face {
+  font-family:'UTM-Aptima';
+  src: url('../font/UTM-Aptima.ttf');
 }
 @font-face {
   font-family: 'FontAurora';
